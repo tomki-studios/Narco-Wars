@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Wallet : MonoBehaviour
 {
     public SaveLoad saveLoad; //initializing savig and loading script
-    public int cash = 100000; //starting cash
+    public int cash=100000; //starting cash
     public Text txt; //debugging
 
     // Update is called once per frame
