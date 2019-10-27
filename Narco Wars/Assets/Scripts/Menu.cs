@@ -2,39 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Menu : MonoBehaviour {
 
-    public int Game;
-    public Canvas Opitons;
-    public Canvas Menu1;
-    public Canvas Chose;
+    public SaveLoad saveLoad;
+    public GameObject SettingsPanel;
+    public GameObject MenuPanel;
 
 	public void Play()
     {
-        Menu1.enabled = false;
-        Chose.enabled = true;
+        saveLoad.Load();
+        MenuPanel.SetActive(false);
+        SceneManager.LoadScene("Gra"); //w tej scenie trzeba sprawdzic czy to pierwsze uruchomienie, jesli tak to panel tworzenia wytwrni a jak nie to kontynuacja gry
     }
 
-    
-
-    
-
-    public void Settings()
+    public void SwitchSettingsPanel()
     {
-        Menu1.enabled = false;
-        Opitons.enabled = true;
-    }
-
-    public void Back()
-    {
-        Menu1.enabled = true;
-        Opitons.enabled = false;
-    }
-
-    public void Exit()
-    {
-        Application.Quit();
+        if (MenuPanel.activeInHierarchy)
+        {
+            MenuPanel.SetActive(false);
+            SettingsPanel.SetActive(true);
+        }
+        else if (!MenuPanel.activeInHierarchy)
+        {
+            MenuPanel.SetActive(true);
+            SettingsPanel.SetActive(false);
+        }
     }
 }

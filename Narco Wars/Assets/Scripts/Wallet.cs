@@ -6,18 +6,17 @@ using UnityEngine.UI;
 public class Wallet : MonoBehaviour
 {
     public SaveLoad saveLoad; //initializing savig and loading script
-    public int cash=100000; //starting cash
-    public Text txt; //debugging
+    public Text txt;
 
-    // Update is called once per frame
     void Update()
     {
-        txt.text = cash.ToString(); //debbuging
+        txt.text = VariableTag.cash.ToString(); 
     }
-    public void Debug() //only debugging
-    {
-        cash -= 100;
-        saveLoad.Save();
-    }
+    //public void Debug() //debugging
+    //{
+    //    VariableTag.cash -= 100;
+    //    saveLoad.Save();
+    //}
+
 }
 //By Daniel "MiPiNi" Grala
