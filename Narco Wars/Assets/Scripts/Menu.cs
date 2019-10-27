@@ -17,15 +17,9 @@ public class Menu : MonoBehaviour {
         Chose.enabled = true;
     }
 
-    public void LoadGame()
-    {
-        //Na razie puste bo nie umiem zrobić//
-    }
+    
 
-    public void NewGame()
-    {
-        SceneManager.LoadScene(sceneBuildIndex: Game);
-    }
+    
 
     public void Settings()
     {
