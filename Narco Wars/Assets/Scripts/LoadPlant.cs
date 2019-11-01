@@ -13,5 +13,6 @@ public class LoadPlant : MonoBehaviour
     public void play()// TUTAJ MOZNA ZMIENIC ZEBY BYLO ODPOWIEDNIE DLA INNEJ WYTWORNI
     {
         SceneManager.LoadScene("Gra");
+        VariableTag.new_game = true; 
     }
 }

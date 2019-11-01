@@ -9,16 +9,52 @@ public class Menu : MonoBehaviour {
     public GameObject SettingsPanel;
     public GameObject MenuPanel;
     public GameObject ChoosePanel;
+    public GameObject New_Load_Game;
 
-	public void Play()
+    public void Play()
+    {
+        MenuPanel.SetActive(false);
+        New_Load_Game.SetActive(true);
+    }
+    public void New_Game()
+    {
+        New_Load_Game.SetActive(false);
+        ChoosePanel.SetActive(true);
+    }
+    public void Load_Game()
     {
         saveLoad.Load();
+        SceneManager.LoadScene("Gra");
+    }
+    public void Return()
+    {
+        if (SettingsPanel.activeInHierarchy)
+        {
+            SettingsPanel.SetActive(false);
+            MenuPanel.SetActive(true);
+        }
+        else if (New_Load_Game.activeInHierarchy)
+        {
+            New_Load_Game.SetActive(false);
+            MenuPanel.SetActive(true);
+        }
+        else if (ChoosePanel.activeInHierarchy)
+        {
+            ChoosePanel.SetActive(false);
+            New_Load_Game.SetActive(true);
+        }
+    }
+    public void Options_click()
+    {
         MenuPanel.SetActive(false);
-        ChoosePanel.SetActive(true);
-        //SceneManager.LoadScene("Gra"); //w tej scenie trzeba sprawdzic czy to pierwsze uruchomienie, jesli tak to panel tworzenia wytwrni a jak nie to kontynuacja gry
+        SettingsPanel.SetActive(true);
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 
-    public void SwitchSettingsPanel()
+    /*public void SwitchSettingsPanel()
     {
         if (MenuPanel.activeInHierarchy)
         {
@@ -33,5 +69,5 @@ public class Menu : MonoBehaviour {
             ChoosePanel.SetActive(false);
         }
       
-    }
+    }*/
 }

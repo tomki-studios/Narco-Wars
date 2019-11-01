@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scripts\LoadGame.cs" />
     <Compile Include="Assets\Scripts\LoadPlant.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\NewGame.cs" />
     <Compile Include="Assets\Scripts\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\VariableTag.cs" />
     <Compile Include="Assets\Scripts\Wallet.cs" />

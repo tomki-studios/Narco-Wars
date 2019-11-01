@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameMenu : MonoBehaviour {
 
     public GameObject PausePanel;
+    public GameObject GamePanel;
+    public GameObject WarehousePanel;
     
     void Update()
     {
@@ -28,6 +30,16 @@ public class GameMenu : MonoBehaviour {
     public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+    public void WarehouseClick()
+    {
+        GamePanel.SetActive(false);
+        WarehousePanel.SetActive(true);
+    }
+    public void Return()
+    {
+        WarehousePanel.SetActive(false);
+        GamePanel.SetActive(true);
     }
 
 }

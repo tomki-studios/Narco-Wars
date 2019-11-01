@@ -16,4 +16,5 @@ public class VariableTag : MonoBehaviour
     public static float StuffAmount;
     public static int TransportCost;
     public static int PaymentChance;
+    public static bool new_game;
 }
